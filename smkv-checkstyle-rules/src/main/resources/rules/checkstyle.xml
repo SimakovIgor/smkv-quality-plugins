@@ -50,7 +50,7 @@
         <module name="ExecutableStatementCount"/>
         <module name="ExplicitInitialization"/>
         <!-- <module name="FinalClass"/> invalid -->
-        <module name="FinalLocalVariable"/>
+        <!-- <module name="FinalLocalVariable"/>-->
         <module name="FinalParameters"/>
         <!-- <module name="HiddenField"/> invalid -->
         <!-- <module name="HideUtilityClassConstructor"/> invalid -->
@@ -107,7 +107,7 @@
         <module name="SuperFinalize"/>
         <module name="SuppressWarnings"/>
         <module name="ThrowsCount"/>
-        <module name="TodoComment"/>
+        <!-- <module name="TodoComment"/>-->
         <!-- <module name="TrailingComment"/> invalid -->
         <module name="TypecastParenPad"/>
         <!-- <module name="UncommentedMain"/> invalid -->
@@ -243,9 +243,7 @@
         <module name="NoWhitespaceBefore"/>
         <module name="NoWhitespaceBeforeCaseDefaultColon"/>
         <module name="ParenPad"/>
-        <module name="OperatorWrap">
-            <property name="option" value="EOL"/>
-        </module>
+        <module name="OperatorWrap"/>
         <module name="AnnotationLocation">
             <property name="id" value="AnnotationLocationMostCases"/>
             <property name="tokens"

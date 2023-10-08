@@ -6,7 +6,7 @@
 
     <groupId>ru.simakov</groupId>
     <artifactId>smkv-quality-plugins</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>${project.version}</version>
 
     <packaging>pom</packaging>
 
@@ -16,14 +16,16 @@
     </modules>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>19</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <project.version>1.0.0-SNAPSHOT</project.version>
+
         <plugins.compiler.version>3.11.0</plugins.compiler.version>
-        <plugins.source.version>3.2.1</plugins.source.version>
-        <plugins.release.version>3.0.0-M6</plugins.release.version>
+        <plugins.source.version>3.3.0</plugins.source.version>
+        <plugins.release.version>3.0.1</plugins.release.version>
     </properties>
 
     <dependencyManagement>
@@ -31,12 +33,12 @@
             <dependency>
                 <groupId>ru.simakov</groupId>
                 <artifactId>smkv-checkstyle-rules</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>ru.simakov</groupId>
                 <artifactId>smkv-pmd-rules</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
