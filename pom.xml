@@ -6,7 +6,7 @@
 
     <groupId>ru.simakov</groupId>
     <artifactId>smkv-quality-plugins</artifactId>
-    <version>${project.version}</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
@@ -33,12 +33,12 @@
             <dependency>
                 <groupId>ru.simakov</groupId>
                 <artifactId>smkv-checkstyle-rules</artifactId>
-                <version>${project.version}</version>
+                <version>1.0.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>ru.simakov</groupId>
                 <artifactId>smkv-pmd-rules</artifactId>
-                <version>${project.version}</version>
+                <version>1.0.0-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
