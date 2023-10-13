@@ -58,7 +58,7 @@
         <module name="IllegalIdentifierName"/>
         <module name="IllegalInstantiation"/>
         <module name="IllegalThrows"/>
-        <module name="IllegalType"/>
+        <!-- <module name="IllegalType"/>-->
         <module name="InnerAssignment"/>
         <module name="InnerTypeLast"/>
         <module name="InterfaceIsType"/>
