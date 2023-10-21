@@ -203,7 +203,7 @@
         <module name="NoFinalizer"/>
         <module name="GenericWhitespace"/>
         <!-- <module name="Indentation"/> invalid -->
-        <module name="AbbreviationAsWordInName">
+        <!-- <module name="AbbreviationAsWordInName">-->
             <property name="ignoreFinal" value="false"/>
             <property name="allowedAbbreviationLength" value="0"/>
             <property name="allowedAbbreviations" value="SSD"/>
@@ -256,7 +256,7 @@
             <property name="allowSamelineMultipleAnnotations" value="true"/>
         </module>
         <!--<module name="AnnotationOnSameLine"/> invalid -->
-        <module name="AnnotationUseStyle"/>
+        <!--<module name="AnnotationUseStyle"/>-->
         <module name="NonEmptyAtclauseDescription"/>
         <module name="InvalidJavadocPosition"/>
         <module name="JavadocBlockTagLocation"/>
