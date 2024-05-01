@@ -43,7 +43,7 @@
         <properties>
             <property name="checkSetters" value="false"/>
             <property name="violationSuppressXPath"
-                      value="//ClassOrInterfaceBodyDeclaration/Annotation/MarkerAnnotation//Name[@Image='Test']"/>
+                      value="./ancestor::ClassDeclaration[matches(@SimpleName, '^.*Test$')]"/>
         </properties>
     </rule>
 
@@ -80,7 +80,6 @@
     <rule ref="category/java/security.xml"/>
 
     <rule ref="category/java/errorprone.xml">
-        <exclude name="DataflowAnomalyAnalysis"/>
         <exclude name="MissingSerialVersionUID"/>
         <exclude name="AvoidDuplicateLiterals"/>
     </rule>
@@ -88,7 +87,7 @@
     <rule ref="category/java/errorprone.xml/EqualsNull">
         <properties>
             <property name="violationSuppressXPath"
-                      value="//ClassOrInterfaceBodyDeclaration/Annotation/MarkerAnnotation//Name[@Image='Test']"/>
+                      value="./ancestor::ClassDeclaration[matches(@SimpleName, '^.*Test$')]"/>
         </properties>
     </rule>
 </ruleset>
