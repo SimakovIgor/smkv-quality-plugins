@@ -18,24 +18,47 @@
         <property name="max" value="199"/>
         <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
     </module>
-    <!-- <module name="Header"> not set -->
+    <module name="Header">
+        <property name="header"
+                  value="/*\n * Copyright (c) 2019-2024. Ivan Vakhrushev and others.\n * https://github.com/mfvanek/pg-index-health\n *\n * This file is a part of &quot;pg-index-health&quot; - a Java library for\n * analyzing and maintaining indexes health in PostgreSQL databases.\n *\n * Licensed under the Apache License 2.0\n */"/>
+        <property name="fileExtensions" value="java"/>
+    </module>
     <module name="NewlineAtEndOfFile"/>
     <module name="OrderedProperties"/>
     <module name="Translation"/>
     <module name="UniqueProperties"/>
     <module name="TreeWalker">
         <module name="SuppressWarningsHolder"/>
+        <module name="AbbreviationAsWordInName">
+            <property name="ignoreFinal" value="false"/>
+            <property name="allowedAbbreviationLength" value="0"/>
+            <property name="allowedAbbreviations" value="SSD"/>
+            <property name="tokens"
+                      value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF, PARAMETER_DEF, VARIABLE_DEF, METHOD_DEF, PATTERN_VARIABLE_DEF, RECORD_DEF, RECORD_COMPONENT_DEF"/>
+        </module>
         <module name="AbstractClassName">
             <property name="ignoreName" value="true"/>
         </module>
+        <module name="AnnotationLocation">
+            <property name="id" value="AnnotationLocationMostCases"/>
+            <property name="tokens"
+                      value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF,
+                      RECORD_DEF, COMPACT_CTOR_DEF"/>
+        </module>
+        <module name="AnnotationLocation">
+            <property name="id" value="AnnotationLocationVariables"/>
+            <property name="tokens" value="VARIABLE_DEF"/>
+            <property name="allowSamelineMultipleAnnotations" value="true"/>
+        </module>
+        <!--<module name="AnnotationOnSameLine"/> invalid -->
+        <module name="AnnotationUseStyle"/>
         <module name="AnonInnerLength"/>
+        <module name="ArrayTypeStyle"/>
         <!--<module name="AvoidInlineConditionals"/> invalid -->
         <module name="AvoidNestedBlocks"/>
         <module name="BooleanExpressionComplexity"/>
         <module name="ClassDataAbstractionCoupling"/>
-        <module name="ClassFanOutComplexity">
-            <property name="max" value="40"/>
-        </module>
+        <module name="ClassFanOutComplexity"/>
         <!-- <module name="ClassMemberImpliedModifier"/> invalid -->
         <module name="RedundantModifier"/>
         <module name="CovariantEquals"/>
@@ -50,15 +73,16 @@
         <module name="ExecutableStatementCount"/>
         <module name="ExplicitInitialization"/>
         <!-- <module name="FinalClass"/> invalid -->
-        <!-- <module name="FinalLocalVariable"/>-->
+        <module name="FinalLocalVariable"/>
         <module name="FinalParameters"/>
         <!-- <module name="HiddenField"/> invalid -->
-        <!-- <module name="HideUtilityClassConstructor"/> invalid -->
+        <module name="HideUtilityClassConstructor"/>
         <module name="IllegalCatch"/>
         <module name="IllegalIdentifierName"/>
         <module name="IllegalInstantiation"/>
         <module name="IllegalThrows"/>
-        <!-- <module name="IllegalType"/>-->
+        <module name="IllegalType"/>
+        <!-- <module name="ImportControl"/> not applicable -->
         <module name="InnerAssignment"/>
         <module name="InnerTypeLast"/>
         <module name="InterfaceIsType"/>
@@ -90,7 +114,7 @@
         <module name="PackageDeclaration"/>
         <module name="ParameterAssignment"/>
         <module name="ParameterNumber">
-            <property name="max" value="12"/>
+            <property name="max" value="13"/>
             <property name="ignoreOverriddenMethods" value="true"/>
         </module>
         <module name="RecordComponentNumber"/>
@@ -107,10 +131,10 @@
         <module name="SuperFinalize"/>
         <module name="SuppressWarnings"/>
         <module name="ThrowsCount"/>
-        <!-- <module name="TodoComment"/>-->
+        <module name="TodoComment"/>
         <!-- <module name="TrailingComment"/> invalid -->
         <module name="TypecastParenPad"/>
-        <!-- <module name="UncommentedMain"/> invalid -->
+        <module name="UncommentedMain"/>
         <module name="UnnecessaryParentheses"/>
         <module name="UnnecessarySemicolonInEnumeration"/>
         <module name="UnnecessarySemicolonInTryWithResources"/>
@@ -147,7 +171,6 @@
         <module name="EmptyStatement"/>
         <module name="OneStatementPerLine"/>
         <module name="MultipleVariableDeclarations"/>
-        <module name="ArrayTypeStyle"/>
         <module name="MissingSwitchDefault"/>
         <module name="DefaultComesLast"/>
         <module name="FallThrough"/>
@@ -202,14 +225,7 @@
         <module name="InterfaceTypeParameterName"/>
         <module name="NoFinalizer"/>
         <module name="GenericWhitespace"/>
-        <!-- <module name="Indentation"/> invalid -->
-        <!-- <module name="AbbreviationAsWordInName">-->
-        <!--            <property name="ignoreFinal" value="false"/>-->
-        <!--            <property name="allowedAbbreviationLength" value="0"/>-->
-        <!--            <property name="allowedAbbreviations" value="SSD"/>-->
-        <!--            <property name="tokens"-->
-        <!--                      value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF, PARAMETER_DEF, VARIABLE_DEF, METHOD_DEF, PATTERN_VARIABLE_DEF, RECORD_DEF, RECORD_COMPONENT_DEF"/>-->
-        <!--        </module>-->
+        <module name="Indentation"/>
         <!-- <module name="OverloadMethodsDeclarationOrder"/> invalid -->
         <module name="VariableDeclarationUsageDistance"/>
         <!-- <module name="ImportOrder"/> invalid -->
@@ -229,7 +245,7 @@
                 ^io\.micrometer\.core\.lang\.(NonNull|Nullable),
                 ^org\.elasticsearch\.common\.Nullable, ^org\.apache\.thrift\.annotation\.Nullable,
                 ^org\.junit\.Test, ^org\.junit\.jupiter\.api\.Assertions, ^org\.junit\.Test, ^org\.junit\.jupiter\.api\.Assertions\..*,
-                ^org\.springframework\.web\.client\.RestTemplate,^javax\.transaction\.Transactional,
+                ^org\.springframework\.boot\.test\.web\.client\.TestRestTemplate,^org\.springframework\.web\.client\.RestTemplate,^javax\.transaction\.Transactional,
                 ^org\.springframework\.test\.web\.servlet\.MockMvc"/>
             <property name="illegalPkgs" value="^org\.hamcrest"/>
         </module>
@@ -243,20 +259,9 @@
         <module name="NoWhitespaceBefore"/>
         <module name="NoWhitespaceBeforeCaseDefaultColon"/>
         <module name="ParenPad"/>
-        <module name="OperatorWrap"/>
-        <module name="AnnotationLocation">
-            <property name="id" value="AnnotationLocationMostCases"/>
-            <property name="tokens"
-                      value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF,
-                      RECORD_DEF, COMPACT_CTOR_DEF"/>
+        <module name="OperatorWrap">
+            <property name="option" value="EOL"/>
         </module>
-        <module name="AnnotationLocation">
-            <property name="id" value="AnnotationLocationVariables"/>
-            <property name="tokens" value="VARIABLE_DEF"/>
-            <property name="allowSamelineMultipleAnnotations" value="true"/>
-        </module>
-        <!--<module name="AnnotationOnSameLine"/> invalid -->
-        <!--<module name="AnnotationUseStyle"/>-->
         <module name="NonEmptyAtclauseDescription"/>
         <module name="InvalidJavadocPosition"/>
         <module name="JavadocBlockTagLocation"/>
@@ -292,14 +297,14 @@
         <module name="ConstantName"/>
         <module name="SingleLineJavadoc"/>
         <module name="EmptyCatchBlock">
-            <property name="exceptionVariableName" value="expected"/>
+            <property name="exceptionVariableName" value="expected|ignore"/>
         </module>
         <module name="CommentsIndentation">
             <property name="tokens" value="SINGLE_LINE_COMMENT, BLOCK_COMMENT_BEGIN"/>
         </module>
         <module name="IllegalMethodCall">
             <property name="illegalMethodNames"
-                      value="emptyList,emptyMap,emptySet,emptyNavigableMap,emptyNavigableSet,emptySortedMap,emptySortedSet,singleton,singletonList,singletonMap,asList"/>
+                      value="emptyList,emptyMap,emptySet,emptyNavigableMap,emptyNavigableSet,emptySortedMap,emptySortedSet,singleton,singletonList,singletonMap,asList,unmodifiableList,unmodifiableSet"/>
             <property name="excludedQualifiers" value=""/>
         </module>
     </module>
