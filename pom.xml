@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.simakov</groupId>
     <artifactId>smkv-quality-plugins</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <packaging>pom</packaging>
 
@@ -33,12 +31,12 @@
             <dependency>
                 <groupId>ru.simakov</groupId>
                 <artifactId>smkv-checkstyle-rules</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.0.1</version>
             </dependency>
             <dependency>
                 <groupId>ru.simakov</groupId>
                 <artifactId>smkv-pmd-rules</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.0.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -105,6 +103,7 @@
         <connection>scm:git:git@github.com:SimakovIgor/smkv-quality-plugins.git</connection>
         <url>scm:git:git@github.com:SimakovIgor/smkv-quality-plugins</url>
         <developerConnection>scm:git:git@github.com:SimakovIgor/smkv-quality-plugins.git</developerConnection>
-    </scm>
+      <tag>v1.0.1</tag>
+  </scm>
 
 </project>
