@@ -22,7 +22,7 @@
 
         <project.version>1.0.0-SNAPSHOT</project.version>
 
-        <plugins.compiler.version>3.13.0</plugins.compiler.version>
+        <plugins.compiler.version>3.14.0</plugins.compiler.version>
         <plugins.source.version>3.3.1</plugins.source.version>
         <plugins.release.version>3.1.1</plugins.release.version>
     </properties>
